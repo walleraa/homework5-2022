@@ -71,9 +71,11 @@ a:visited {
         flex-direction: row;
         flex-basis: 275px;
         justify-content: center;
+        flex-wrap: nowrap;
     }
     .card {
         flex-basis: 275px;
+        align-self: center;
     }
     header {
         position: fixed;
@@ -114,10 +116,12 @@ a:visited {
     .pricing {
         flex-direction: row;
         align-items: flex-end;
+        flex-wrap:nowrap
     }
     .card {
         border: solid 2px #45ADDD;
         flex-basis: 325px;
+        align-self: center;
     }
     .gallery, #gallery {
         display: none;
