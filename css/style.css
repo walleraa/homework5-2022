@@ -1,3 +1,11 @@
+#logo{
+    animation: enter 5s;
+}
+@keyframes enter {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
 body {
     font-family: 'Poppins', serif;
     /* background-attachment: fixed;
@@ -25,6 +33,96 @@ a:visited {
     padding: 20px 0px 20px 0px;
     border-radius: 50px 50px 0px 0px;
 }
-.card > h3{
-    background: transparent;
+.card {
+    border-radius: 50px 50px 0px 0px;
+
+    flex-basis: 450px;
+    /* flex: 1 1 450px; */
+}
+.pricing {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: center;
+    /* flex: 1 1 450px; */
+    /* flex-basis: 450px; */
+}
+.gallery img{
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@media screen and (min-width:900px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        /* flex-wrap: nowrap; */
+    }
+    .nav_links {
+        flex-direction: row;
+    }
+    .pricing {
+        flex-direction: row;
+        flex-basis: 275px;
+        justify-content: center;
+    }
+    .card {
+        flex-basis: 275px;
+    }
+    header {
+        position: fixed;
+        width: 100%;
+    }
+    main {
+        padding-top: 80px;
+    }
+    main header {
+        position: static;
+    }
+}
+
+@media screen and (prefers-reduced-motion) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    body {
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    #logo {
+        align-self: center;
+    }
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .pricing {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+    .gallery, #gallery {
+        display: none;
+    }
+    .card > ul > li:nth-child(2)::after {
+        content: "\01F44D";
+    }
 }
